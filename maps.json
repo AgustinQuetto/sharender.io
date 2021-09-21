@@ -1,0 +1,78 @@
+{
+    "ProductController": {
+        "instance": {
+            "name": ""
+        },
+        "constructor": [
+            "name"
+        ],
+        "methods": {
+            "instance": {
+                "getName": {
+                    "parameters": [],
+                    "endpoint": {
+                        "url": "/ProductController/getName",
+                        "body": []
+                    }
+                },
+                "setName": {
+                    "parameters": [
+                        "name"
+                    ],
+                    "endpoint": {
+                        "url": "/ProductController/setName",
+                        "body": [
+                            "name"
+                        ]
+                    }
+                }
+            },
+            "static": {
+                "message": {
+                    "parameters": [
+                        "text"
+                    ],
+                    "endpoint": {
+                        "url": "/ProductController/message",
+                        "body": [
+                            "text"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "CategoriesController": {
+        "instance": {
+            "categoriesNames": []
+        },
+        "constructor": [
+            "categoriesNames"
+        ],
+        "methods": {
+            "instance": {
+                "getCategories": {
+                    "parameters": [],
+                    "endpoint": {
+                        "url": "/CategoriesController/getCategories",
+                        "body": []
+                    }
+                },
+                "addCategory": {
+                    "parameters": [
+                        "name",
+                        "adds"
+                    ],
+                    "endpoint": {
+                        "url": "/CategoriesController/addCategory",
+                        "body": [
+                            "name",
+                            "adds"
+                        ]
+                    }
+                }
+            },
+            "static": {}
+        }
+    }
+}

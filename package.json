@@ -1,0 +1,17 @@
+{
+  "name": "sharender.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Agustin Quetto",
+  "license": "ISC",
+  "dependencies": {
+    "comment-parser": "^1.2.4",
+    "extract-function": "^2.0.1",
+    "get-comments": "^1.0.1",
+    "multilang-extract-comments": "^0.4.0"
+  }
+}
