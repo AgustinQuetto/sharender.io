@@ -13,6 +13,12 @@
                     "endpoint": {
                         "url": "/ProductController/getName",
                         "body": []
+                    },
+                    "socket": {
+                        "name": {
+                            "get": "get_ProductController_getName",
+                            "set": "set_ProductController_getName"
+                        }
                     }
                 },
                 "setName": {
@@ -24,6 +30,12 @@
                         "body": [
                             "name"
                         ]
+                    },
+                    "socket": {
+                        "name": {
+                            "get": "get_ProductController_setName",
+                            "set": "set_ProductController_setName"
+                        }
                     }
                 }
             },
@@ -37,6 +49,12 @@
                         "body": [
                             "text"
                         ]
+                    },
+                    "socket": {
+                        "name": {
+                            "get": "get_static_ProductController_message",
+                            "set": "set_static_ProductController_message"
+                        }
                     }
                 }
             }
@@ -56,6 +74,12 @@
                     "endpoint": {
                         "url": "/CategoriesController/getCategories",
                         "body": []
+                    },
+                    "socket": {
+                        "name": {
+                            "get": "get_CategoriesController_getCategories",
+                            "set": "set_CategoriesController_getCategories"
+                        }
                     }
                 },
                 "addCategory": {
@@ -69,10 +93,34 @@
                             "name",
                             "adds"
                         ]
+                    },
+                    "socket": {
+                        "name": {
+                            "get": "get_CategoriesController_addCategory",
+                            "set": "set_CategoriesController_addCategory"
+                        }
                     }
                 }
             },
-            "static": {}
+            "static": {
+                "message": {
+                    "parameters": [
+                        "arr"
+                    ],
+                    "endpoint": {
+                        "url": "/CategoriesController/message",
+                        "body": [
+                            "arr"
+                        ]
+                    },
+                    "socket": {
+                        "name": {
+                            "get": "get_static_CategoriesController_message",
+                            "set": "set_static_CategoriesController_message"
+                        }
+                    }
+                }
+            }
         }
     }
 }

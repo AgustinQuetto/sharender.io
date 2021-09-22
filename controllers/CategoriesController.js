@@ -11,6 +11,10 @@ class CategoriesController {
   addCategory(name, adds) {
     this.categoriesNames.push(name);
   }
+
+  static message(arr) {
+    return `categories: ${arr.join(",")}`;
+  }
 }
 
 module.exports = CategoriesController;

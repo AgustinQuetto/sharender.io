@@ -24,9 +24,12 @@ const Mapps = files.reduce((prev, curr) => {
     );
     instanceOnly.map((methodInstance) => {
       const parameters = getParamNames(instance[methodInstance]);
+      const url = `/${name}/${methodInstance}`;
+      const package = url.replace(/\//g, "_");
       mapping.methods.instance[methodInstance] = {
         parameters,
-        endpoint: { url: `/${name}/${methodInstance}`, body: parameters },
+        endpoint: { url, body: parameters },
+        socket: { name: { get: `get${package}`, set: `set${package}` } },
       };
     });
     const staticOnly = Object.getOwnPropertyNames(c).filter(
@@ -34,9 +37,14 @@ const Mapps = files.reduce((prev, curr) => {
     );
     staticOnly.map((methodStatic) => {
       const parameters = getParamNames(c[methodStatic]);
+      const url = `/${name}/${methodStatic}`;
+      const package = url.replace(/\//g, "_");
       mapping.methods.static[methodStatic] = {
         parameters,
-        endpoint: { url: `/${name}/${methodStatic}`, body: parameters },
+        endpoint: { url, body: parameters },
+        socket: {
+          name: { get: `get_static${package}`, set: `set_static${package}` },
+        },
       };
     });
     prev[name] = mapping;
