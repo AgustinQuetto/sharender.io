@@ -2,9 +2,13 @@ const express = require("express");
 const app = express();
 const port = 3000;
 
-const sharender = require("../../sharender.io");
+const ProductsController = require("./controllers/ProductsController");
 
-sharender([require.resolve("./controllers/ProductController")], "server-A");
+const Sharender = require("../../sharender.io");
+const SharenderInstance = new Sharender("server-A");
+
+SharenderInstance.register(ProductsController);
+SharenderInstance.generate(true);
 
 app.get("/", (req, res) => {
   res.send("Hello World!");

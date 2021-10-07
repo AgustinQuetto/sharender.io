@@ -1,5 +1,5 @@
 //product
-class ProductController {
+class ProductsController {
   constructor(name = "") {
     this.name = name;
   }
@@ -17,4 +17,4 @@ class ProductController {
   }
 }
 
-module.exports = ProductController;
+module.exports = ProductsController;

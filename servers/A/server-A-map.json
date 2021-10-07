@@ -1,5 +1,5 @@
 {
-    "ProductController": {
+    "ProductsController": {
         "instance": {
             "name": ""
         },
@@ -11,13 +11,13 @@
                 "getName": {
                     "parameters": [],
                     "endpoint": {
-                        "url": "/ProductController/getName",
+                        "url": "/ProductsController/getName",
                         "body": []
                     },
                     "socket": {
                         "name": {
-                            "get": "get_ProductController_getName",
-                            "set": "set_ProductController_getName"
+                            "get": "get_ProductsController_getName",
+                            "set": "set_ProductsController_getName"
                         }
                     }
                 },
@@ -26,15 +26,15 @@
                         "name"
                     ],
                     "endpoint": {
-                        "url": "/ProductController/setName",
+                        "url": "/ProductsController/setName",
                         "body": [
                             "name"
                         ]
                     },
                     "socket": {
                         "name": {
-                            "get": "get_ProductController_setName",
-                            "set": "set_ProductController_setName"
+                            "get": "get_ProductsController_setName",
+                            "set": "set_ProductsController_setName"
                         }
                     }
                 }
@@ -45,15 +45,15 @@
                         "text"
                     ],
                     "endpoint": {
-                        "url": "/ProductController/message",
+                        "url": "/ProductsController/message",
                         "body": [
                             "text"
                         ]
                     },
                     "socket": {
                         "name": {
-                            "get": "get_static_ProductController_message",
-                            "set": "set_static_ProductController_message"
+                            "get": "get_static_ProductsController_message",
+                            "set": "set_static_ProductsController_message"
                         }
                     }
                 }
