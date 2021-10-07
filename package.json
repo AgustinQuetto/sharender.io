@@ -10,8 +10,10 @@
   "license": "ISC",
   "dependencies": {
     "comment-parser": "^1.2.4",
+    "express": "^4.17.1",
     "extract-function": "^2.0.1",
     "get-comments": "^1.0.1",
-    "multilang-extract-comments": "^0.4.0"
+    "multilang-extract-comments": "^0.4.0",
+    "nodemon": "^2.0.13"
   }
 }

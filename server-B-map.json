@@ -1,0 +1,65 @@
+{
+    "CategoriesController": {
+        "instance": {
+            "categoriesNames": []
+        },
+        "constructor": [
+            "categoriesNames"
+        ],
+        "methods": {
+            "instance": {
+                "getCategories": {
+                    "parameters": [],
+                    "endpoint": {
+                        "url": "/CategoriesController/getCategories",
+                        "body": []
+                    },
+                    "socket": {
+                        "name": {
+                            "get": "get_CategoriesController_getCategories",
+                            "set": "set_CategoriesController_getCategories"
+                        }
+                    }
+                },
+                "addCategory": {
+                    "parameters": [
+                        "name",
+                        "adds"
+                    ],
+                    "endpoint": {
+                        "url": "/CategoriesController/addCategory",
+                        "body": [
+                            "name",
+                            "adds"
+                        ]
+                    },
+                    "socket": {
+                        "name": {
+                            "get": "get_CategoriesController_addCategory",
+                            "set": "set_CategoriesController_addCategory"
+                        }
+                    }
+                }
+            },
+            "static": {
+                "message": {
+                    "parameters": [
+                        "arr"
+                    ],
+                    "endpoint": {
+                        "url": "/CategoriesController/message",
+                        "body": [
+                            "arr"
+                        ]
+                    },
+                    "socket": {
+                        "name": {
+                            "get": "get_static_CategoriesController_message",
+                            "set": "set_static_CategoriesController_message"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

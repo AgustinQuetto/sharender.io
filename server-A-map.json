@@ -1,0 +1,63 @@
+{
+    "ProductController": {
+        "instance": {
+            "name": ""
+        },
+        "constructor": [
+            "name"
+        ],
+        "methods": {
+            "instance": {
+                "getName": {
+                    "parameters": [],
+                    "endpoint": {
+                        "url": "/ProductController/getName",
+                        "body": []
+                    },
+                    "socket": {
+                        "name": {
+                            "get": "get_ProductController_getName",
+                            "set": "set_ProductController_getName"
+                        }
+                    }
+                },
+                "setName": {
+                    "parameters": [
+                        "name"
+                    ],
+                    "endpoint": {
+                        "url": "/ProductController/setName",
+                        "body": [
+                            "name"
+                        ]
+                    },
+                    "socket": {
+                        "name": {
+                            "get": "get_ProductController_setName",
+                            "set": "set_ProductController_setName"
+                        }
+                    }
+                }
+            },
+            "static": {
+                "message": {
+                    "parameters": [
+                        "text"
+                    ],
+                    "endpoint": {
+                        "url": "/ProductController/message",
+                        "body": [
+                            "text"
+                        ]
+                    },
+                    "socket": {
+                        "name": {
+                            "get": "get_static_ProductController_message",
+                            "set": "set_static_ProductController_message"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
