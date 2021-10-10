@@ -7,8 +7,10 @@ const ProductsController = require("./controllers/ProductsController");
 const Sharender = require("../../sharender.io");
 const SharenderInstance = new Sharender("server-A");
 
-SharenderInstance.register(ProductsController);
+SharenderInstance.register(ProductsController, ["Coffee"]);
 SharenderInstance.generate(true);
+
+SharenderInstance.listener(app, "express");
 
 app.get("/", (req, res) => {
   res.send("Hello World!");

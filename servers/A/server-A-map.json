@@ -1,7 +1,7 @@
 {
     "ProductsController": {
         "instance": {
-            "name": ""
+            "name": "Coffee"
         },
         "constructor": [
             "name"
