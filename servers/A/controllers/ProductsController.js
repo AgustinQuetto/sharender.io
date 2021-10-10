@@ -1,4 +1,3 @@
-//product
 class ProductsController {
   constructor(name = "") {
     this.name = name;
@@ -16,5 +15,12 @@ class ProductsController {
     return `description: ${text}`;
   }
 }
+
+ProductsController.sharender = {
+  getName: {
+    endpoint: "/products/:name",
+    method: "post",
+  },
+};
 
 module.exports = ProductsController;

@@ -10,14 +10,15 @@
             "instance": {
                 "getName": {
                     "parameters": [],
+                    "method": "post",
                     "endpoint": {
-                        "url": "/ProductsController/getName",
+                        "url": "/products/:name",
                         "body": []
                     },
                     "socket": {
                         "name": {
-                            "get": "get_ProductsController_getName",
-                            "set": "set_ProductsController_getName"
+                            "get": "get_products_:name",
+                            "set": "set_products_:name"
                         }
                     }
                 },
@@ -25,6 +26,7 @@
                     "parameters": [
                         "name"
                     ],
+                    "method": "post",
                     "endpoint": {
                         "url": "/ProductsController/setName",
                         "body": [
@@ -48,7 +50,8 @@
                         "url": "/ProductsController/message",
                         "body": [
                             "text"
-                        ]
+                        ],
+                        "method": "post"
                     },
                     "socket": {
                         "name": {
