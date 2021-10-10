@@ -9,7 +9,6 @@ const SharenderInstance = new Sharender("server-A");
 
 SharenderInstance.register(ProductsController, ["Coffee"]);
 SharenderInstance.generate(true);
-
 SharenderInstance.listener(app, "express");
 
 app.get("/", (req, res) => {
