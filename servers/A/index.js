@@ -10,10 +10,8 @@ const SharenderInstance = new Sharender("server-A");
 SharenderInstance.register(ProductsController, ["Coffee"]);
 SharenderInstance.generate(true);
 SharenderInstance.listener(app, "express");
-
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
+SharenderInstance.service("server-B", "http://localhost:3001");
+SharenderInstance.consume();
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);

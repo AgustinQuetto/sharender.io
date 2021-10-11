@@ -1,4 +1,4 @@
-//const { parse } = require('comment-parser')
+const axios = require("axios");
 const fs = require("fs");
 
 class Sharender {
@@ -9,6 +9,9 @@ class Sharender {
     this.mapping = {};
     this.source_code = {};
     this.topics = [];
+    this.consumer = "";
+    this.connections = {};
+    this.interfaces = {};
   }
 
   register(topic, args) {
@@ -117,6 +120,64 @@ class Sharender {
         });
       });
     });
+    app.get("/sharender/map", (req, res, next) => res.json(this.mapping));
+    this.consumer = "express";
+  }
+
+  service(name, address) {
+    switch (this.consumer) {
+      case "express":
+        this.connections[name] = address;
+        break;
+      default:
+        break;
+    }
+  }
+
+  consume() {
+    switch (this.consumer) {
+      case "express":
+        Object.entries(this.connections).map(async ([service, address]) => {
+          const serviceMap = await axios.get(`${address}/sharender/map`);
+          if (serviceMap && serviceMap.status === 200) {
+            const { data: map } = serviceMap;
+            const interfaceData = {};
+            Object.entries(map).map(
+              ([name, { instance, constructor, methods }]) => {
+                interfaceData[name] = { static: {}, instance: {} };
+                const { instance: _instance, static: _static } = methods;
+                Object.entries(_instance).map(
+                  ([methodName, methodConfiguration]) => {
+                    interfaceData[name].instance[methodName] = function () {
+                      return new Promise(async (resolve, rejected) => {
+                        try {
+                          const body =
+                            {}; /* methodConfiguration.endpoint.body.reduce(([]) */
+                          const response = await axios[
+                            methodConfiguration.method
+                          ](`${address}${methodConfiguration.endpoint.url}`);
+                          return resolve(response.data);
+                        } catch (e) {
+                          return rejected(e);
+                        }
+                      });
+                    };
+                  }
+                );
+              }
+            );
+            this[service] = interfaceData;
+            console.log(
+              await this[
+                "server-B"
+              ].CategoriesController.instance.getCategories("hola")
+            );
+          }
+        });
+        break;
+      default:
+        break;
+    }
   }
 }
 

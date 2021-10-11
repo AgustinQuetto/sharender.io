@@ -9,6 +9,7 @@
   "author": "Agustin Quetto",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.22.0",
     "comment-parser": "^1.2.4",
     "esprima-modern": "^4.0.0-dev",
     "express": "^4.17.1",

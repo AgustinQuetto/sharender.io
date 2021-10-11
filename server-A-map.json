@@ -1,0 +1,66 @@
+{
+    "ProductsController": {
+        "instance": {
+            "name": "Coffee"
+        },
+        "constructor": [
+            "name"
+        ],
+        "methods": {
+            "instance": {
+                "getName": {
+                    "parameters": [],
+                    "method": "post",
+                    "endpoint": {
+                        "url": "/products/:name",
+                        "body": []
+                    },
+                    "socket": {
+                        "name": {
+                            "get": "get_products_:name",
+                            "set": "set_products_:name"
+                        }
+                    }
+                },
+                "setName": {
+                    "parameters": [
+                        "name"
+                    ],
+                    "method": "post",
+                    "endpoint": {
+                        "url": "/ProductsController/setName",
+                        "body": [
+                            "name"
+                        ]
+                    },
+                    "socket": {
+                        "name": {
+                            "get": "get_ProductsController_setName",
+                            "set": "set_ProductsController_setName"
+                        }
+                    }
+                }
+            },
+            "static": {
+                "message": {
+                    "parameters": [
+                        "text"
+                    ],
+                    "endpoint": {
+                        "url": "/ProductsController/message",
+                        "body": [
+                            "text"
+                        ],
+                        "method": "post"
+                    },
+                    "socket": {
+                        "name": {
+                            "get": "get_static_ProductsController_message",
+                            "set": "set_static_ProductsController_message"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

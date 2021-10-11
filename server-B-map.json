@@ -1,0 +1,68 @@
+{
+    "CategoriesController": {
+        "instance": {
+            "categoriesNames": "Drinks"
+        },
+        "constructor": [
+            "categoriesNames"
+        ],
+        "methods": {
+            "instance": {
+                "getCategories": {
+                    "parameters": [],
+                    "method": "post",
+                    "endpoint": {
+                        "url": "/CategoriesController/getCategories",
+                        "body": []
+                    },
+                    "socket": {
+                        "name": {
+                            "get": "get_CategoriesController_getCategories",
+                            "set": "set_CategoriesController_getCategories"
+                        }
+                    }
+                },
+                "addCategory": {
+                    "parameters": [
+                        "name",
+                        "adds"
+                    ],
+                    "method": "post",
+                    "endpoint": {
+                        "url": "/CategoriesController/addCategory",
+                        "body": [
+                            "name",
+                            "adds"
+                        ]
+                    },
+                    "socket": {
+                        "name": {
+                            "get": "get_CategoriesController_addCategory",
+                            "set": "set_CategoriesController_addCategory"
+                        }
+                    }
+                }
+            },
+            "static": {
+                "message": {
+                    "parameters": [
+                        "arr"
+                    ],
+                    "endpoint": {
+                        "url": "/CategoriesController/message",
+                        "body": [
+                            "arr"
+                        ],
+                        "method": "post"
+                    },
+                    "socket": {
+                        "name": {
+                            "get": "get_static_CategoriesController_message",
+                            "set": "set_static_CategoriesController_message"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
